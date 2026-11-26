@@ -22,7 +22,7 @@
       <h1>RIPPER <span>VR</span></h1>
       <p class="tagline">QUEST 2 // SANDBOX BUILD</p>
       <p>Spawn stylized humanoid targets, equip melee tools and firearms, test segment cuts, and experiment with loose-object physics.</p>
-      <button id="startButton">ENTER SANDBOX</button>
+      <button id="startButton">START + ENTER VR</button>
       <div class="instructions">
         <b>DESKTOP</b> WASD move · mouse look · click swing/fire · E menu · 1–6 weapons · G drop · R reload · P pause<br>
         <b>QUEST</b> Enter VR · right trigger attacks/selects · grip picks up/drops nearby objects · aim controller laser at menu
@@ -38,11 +38,12 @@
     <div class="pill" id="targetLabel">TARGETS 0</div>
     <div id="status">Ready</div>
   </header>
+  <button id="vrRetry" type="button" aria-label="Enter immersive VR">ENTER VR</button>
   <div id="crosshair">+</div>
   <div id="toast" aria-live="polite"></div>
   <a-scene id="scene" background="color:#101827"
     renderer="colorManagement:true; antialias:true; physicallyCorrectLights:false; maxCanvasWidth:2048; maxCanvasHeight:2048"
-    vr-mode-ui="enabled:true" webxr="optionalFeatures: local-floor, bounded-floor"
+    xr-mode-ui="enabled: true; XRMode: vr" webxr="optionalFeatures: local-floor, bounded-floor"
     ripper-runtime>
     <a-assets></a-assets>
     <a-entity light="type:ambient; intensity:.82"></a-entity>

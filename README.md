@@ -34,7 +34,7 @@ A modular, browser-based A-Frame/WebXR physics sandbox built for Meta Quest 2 an
 
 ## Run on Quest 2
 
-Immersive WebXR generally requires HTTPS. The Mac's `localhost` address is not accessible as `localhost` from the headset.
+Immersive WebXR requires a secure context (HTTPS, or localhost during local development). The scene uses A-Frame 1.7-compatible `xr-mode-ui`; the start button also calls `scene.enterVR()` directly from the user click. The Mac's `localhost` address is not accessible as `localhost` from the headset.
 
 1. Upload the *contents* of this folder to a static HTTPS host, such as GitHub Pages.
 2. Open the published HTTPS URL in Meta Quest Browser.

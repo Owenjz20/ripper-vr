@@ -9,3 +9,7 @@ button{cursor:pointer;background:#1e506b;border:1px solid #72dff4;color:#fff;pad
 #crosshair{position:fixed;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);color:#a7f3ff;font-size:19px;text-shadow:0 0 8px #44dfff;pointer-events:none;opacity:.65}
 #toast{position:fixed;z-index:20;left:50%;bottom:20px;transform:translateX(-50%);padding:8px 14px;border-radius:20px;background:#101b2bdd;border:1px solid #55728e;color:white;font-size:12px;opacity:0;transition:opacity .18s;pointer-events:none;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}#toast.show{opacity:1}
 @media(max-width:560px){#hud{font-size:9px;gap:4px}.pill{padding:4px 6px}}
+
+#vrRetry{display:none;position:fixed;z-index:60;right:14px;bottom:14px;padding:13px 18px;background:#164e68;border:2px solid #7beaff;border-radius:10px;color:#fff;font-weight:900;letter-spacing:1px;box-shadow:0 5px 24px #0009;touch-action:manipulation}
+#vrRetry.visible{display:block}
+#vrRetry:active{background:#287b9a}

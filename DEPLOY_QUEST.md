@@ -1,6 +1,6 @@
 # Publish RIPPER VR for Quest 2
 
-The headset needs the page to be served from HTTPS to enter immersive WebXR. A Mac-only `http://localhost:8000` address works on the Mac, not on the headset.
+The headset needs the page to be served from HTTPS to enter immersive WebXR. This fixed build uses A-Frame 1.7’s `xr-mode-ui` component and calls the scene’s `enterVR()` method from the launch-button click. A Mac-only `http://localhost:8000` address works on the Mac, not on the headset.
 
 ## GitHub Pages route
 
@@ -14,7 +14,7 @@ The headset needs the page to be served from HTTPS to enter immersive WebXR. A M
 8. Under **Build and deployment**, choose **Deploy from a branch**.
 9. Select branch `main` and folder `/ (root)`, then save.
 10. Wait for GitHub Pages to publish the site. Copy the HTTPS URL shown on that page.
-11. Open the HTTPS URL in Meta Quest Browser. Press **ENTER SANDBOX**, then enter VR.
+11. Open the HTTPS URL in Meta Quest Browser. Press **START + ENTER VR**. If the page remains flat, use the blue **ENTER VR** retry button at the bottom-right. The headset should change into immersive mode and track your head/controllers.
 
 ## Local desktop run
 

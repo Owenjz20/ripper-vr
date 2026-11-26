@@ -1,0 +1,13 @@
+QUEST 2 VR FIX
+
+What changed:
+- Replaced deprecated A-Frame 1.7 attribute vr-mode-ui with xr-mode-ui="enabled: true; XRMode: vr".
+- The main START + ENTER VR button now also requests immersive VR in the same user click.
+- Added a visible ENTER VR retry button if the automatic request is blocked.
+- Added WebXR secure-context/support detection and useful status messages.
+
+Important:
+- Open the site in Meta Quest Browser, not a regular phone browser.
+- Use an HTTPS URL (GitHub Pages is HTTPS). A Mac localhost URL is not the same as Quest localhost.
+- Tap START + ENTER VR, then accept any headset/browser prompt.
+- If it remains flat, press the blue ENTER VR button at bottom-right.
