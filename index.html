@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#0b1422">
+  <title>RIPPER VR — Ultimate Sandbox</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  <script defer src="js/core.js"></script>
+  <script defer src="js/physics.js"></script>
+  <script defer src="js/characters.js"></script>
+  <script defer src="js/weapons.js"></script>
+  <script defer src="js/props.js"></script>
+  <script defer src="js/menu.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <div id="boot" class="overlay">
+    <section class="boot-card">
+      <div class="eyebrow">WEBXR PHYSICS PLAYGROUND</div>
+      <h1>RIPPER <span>VR</span></h1>
+      <p class="tagline">QUEST 2 // SANDBOX BUILD</p>
+      <p>Spawn stylized humanoid targets, equip melee tools and firearms, test segment cuts, and experiment with loose-object physics.</p>
+      <button id="startButton">ENTER SANDBOX</button>
+      <div class="instructions">
+        <b>DESKTOP</b> WASD move · mouse look · click swing/fire · E menu · 1–6 weapons · G drop · R reload · P pause<br>
+        <b>QUEST</b> Enter VR · right trigger attacks/selects · grip picks up/drops nearby objects · aim controller laser at menu
+      </div>
+      <p class="fineprint">Stylized, non-graphic prototype. A-Frame is loaded from its CDN; internet is required.</p>
+    </section>
+  </div>
+  <header id="hud">
+    <div class="brand">RIPPER <span>VR</span></div>
+    <div class="pill" id="weaponLabel">MACHETE</div>
+    <div class="pill" id="ammoLabel">MELEE</div>
+    <div class="pill" id="healthLabel">HEALTH 100</div>
+    <div class="pill" id="targetLabel">TARGETS 0</div>
+    <div id="status">Ready</div>
+  </header>
+  <div id="crosshair">+</div>
+  <div id="toast" aria-live="polite"></div>
+  <a-scene id="scene" background="color:#101827"
+    renderer="colorManagement:true; antialias:true; physicallyCorrectLights:false; maxCanvasWidth:2048; maxCanvasHeight:2048"
+    vr-mode-ui="enabled:true" webxr="optionalFeatures: local-floor, bounded-floor"
+    ripper-runtime>
+    <a-assets></a-assets>
+    <a-entity light="type:ambient; intensity:.82"></a-entity>
+    <a-entity light="type:directional; intensity:1.1" position="-3 8 4"></a-entity>
+    <a-sky color="#101827"></a-sky>
+    <a-plane rotation="-90 0 0" width="80" height="80" color="#27313d" material="roughness:1"></a-plane>
+    <a-entity id="arenaDecor"></a-entity>
+    <a-entity id="playerRig" position="0 0 3">
+      <a-entity id="head" camera look-controls wasd-controls="acceleration:22; fly:false" position="0 1.6 0">
+        <a-entity id="desktopWeaponMount" position=".24 -.24 -.45"></a-entity>
+        <a-entity cursor="rayOrigin:mouse; fuse:false" raycaster="objects:.menu-button; far:6"></a-entity>
+      </a-entity>
+      <a-entity id="leftController" laser-controls="hand:left"
+        raycaster="objects:.menu-button; far:8" line="color:#70eaff; opacity:.7"></a-entity>
+      <a-entity id="rightController" laser-controls="hand:right"
+        raycaster="objects:.menu-button; far:8" line="color:#70eaff; opacity:.7"></a-entity>
+    </a-entity>
+    <a-entity id="enemyRoot"></a-entity>
+    <a-entity id="weaponRoot"></a-entity>
+    <a-entity id="propRoot"></a-entity>
+    <a-entity id="looseRoot"></a-entity>
+    <a-entity id="effectRoot"></a-entity>
+  </a-scene>
+</body>
+</html>

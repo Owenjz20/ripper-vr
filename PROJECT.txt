@@ -1,0 +1,6 @@
+RIPPER VR — ULTIMATE SANDBOX PROTOTYPE
+Version: 0.4.0-prototype
+Target: Meta Quest 2 WebXR + Desktop
+Entrypoint: index.html
+Engine: A-Frame 1.7.0 (CDN)
+Editor: Visual Studio Code
